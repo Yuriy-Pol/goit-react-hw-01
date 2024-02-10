@@ -1,25 +1,27 @@
-export const Profile = ({ username, tag, location, image, stats }) => {
+import css from './Profile.module.css';
+
+export const Profile = ({ name, tag, location, image, stats }) => {
   return (
-    <div>
-      <div>
-        <img src={image} alt="User avatar" />
-        <p>{username}</p>
-        <p>{tag}</p>
-        <p>{location}</p>
+    <div className={css.wrapper}>
+      <div className={css.imgWrapper}>
+        <img className={css.img} src={image} alt="User avatar" />
+        <p className={css.name}>{name}</p>
+        <p className={css.nameDsc}>@{tag}</p>
+        <p className={css.nameDsc}>{location}</p>
       </div>
 
-      <ul>
-        <li>
+      <ul className={css.list}>
+        <li className={css.listItem}>
           <span>Followers</span>
-          <span>{stats.followers}</span>
+          <span className={css.listAmount}>{stats.followers}</span>
         </li>
-        <li>
+        <li className={css.listItem}>
           <span>Views</span>
-          <span>{stats.views}</span>
+          <span className={css.listAmount}>{stats.views}</span>
         </li>
-        <li>
+        <li className={css.listItem}>
           <span>Likes</span>
-          <span>{stats.likes}</span>
+          <span className={css.listAmount}>{stats.likes}</span>
         </li>
       </ul>
     </div>
